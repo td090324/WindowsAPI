@@ -35,17 +35,30 @@ void PaintScene::Update()
 	{
 		if(!isClick)
 			LButtonDown();
+
+		if (type == PEN)
+			DrawPen();
 	}
 	else
 	{
 		if(isClick)
 			LButtonUp();
+
 	}
+
+
+
+
 }
 
 void PaintScene::Render(HDC hdc)
 {
-	
+	Debug();
+
+	DrawObjects();
+
+	if(isClick)
+		Preview();
 }
 
 void PaintScene::LButtonDown()
@@ -58,19 +71,79 @@ void PaintScene::LButtonDown()
 void PaintScene::LButtonUp()
 {
 	isClick = false;
+	
 	endPos = mousePos;
 
-	DrawObjects();
+	Data data;
+	data.startPos = this->startPos;
+	data.endPos = this->endPos;
+	data.color = this->color;
+	data.type = this->type;
 
+	objects.push_back(data);
 }
 
 void PaintScene::DrawPen()
 {
+	SelectObject(hdc, hPen[color]);
+	SelectObject(hdc, hBrush[color]);
+
+	endPos = mousePos;
+
+	MoveToEx(hdc, startPos.x, startPos.y, nullptr);
+	LineTo(hdc, endPos.x, endPos.y);
+
+	startPos = endPos;
 }
 
 void PaintScene::DrawObjects()
 {
-	SelectObject(hdc, hPen[color]);
+	//범위 기반 for문
+	for (Data data : objects)
+	{
+		SelectObject(hdc, hPen[data.color]);
+		SelectObject(hdc, hBrush[data.color]);
+
+		switch (data.type)
+		{
+		case PaintScene::LINE:
+			MoveToEx(hdc, data.startPos.x, data.startPos.y, nullptr);
+			LineTo(hdc, data.endPos.x, data.endPos.y);
+			break;
+		case PaintScene::RECT:
+			Rectangle(hdc, data.startPos.x, data.startPos.y, data.endPos.x, data.endPos.y);
+			break;
+		case PaintScene::ELLIPSE:
+			Ellipse(hdc, data.startPos.x, data.startPos.y, data.endPos.x, data.endPos.y);
+			break;
+		default:
+			break;
+		}
+	}
+
+	/*for (UINT i = 0; i < objects.size(); i++)
+	{
+		SelectObject(hdc, hPen[color]);
+		SelectObject(hdc, hBrush[color]);
+
+		switch (type)
+		{
+		case PaintScene::LINE:
+			MoveToEx(hdc, objects[i].startPos.x, objects[i].startPos.y, nullptr);
+			LineTo(hdc, objects[i].endPos.x, objects[i].endPos.y);
+			break;
+		case PaintScene::RECT:
+			Rectangle(hdc, objects[i].startPos.x, objects[i].startPos.y, objects[i].endPos.x, objects[i].endPos.y);
+			break;
+		case PaintScene::ELLIPSE:
+			Ellipse(hdc, objects[i].startPos.x, objects[i].startPos.y, objects[i].endPos.x, objects[i].endPos.y);
+			break;
+		default:
+			break;
+		}
+	}*/
+
+	/*SelectObject(hdc, hPen[color]);
 	SelectObject(hdc, hBrush[color]);
 
 	switch (type)
@@ -87,7 +160,7 @@ void PaintScene::DrawObjects()
 		break;
 	default:
 		break;
-	}
+	}*/
 }
 
 void PaintScene::SetState()
@@ -109,4 +182,38 @@ void PaintScene::SetState()
 		color = GREEN;
 	if (GetAsyncKeyState(VK_F4))
 		color = BLUE;
+}
+
+void PaintScene::Preview()
+{
+	SelectObject(hdc, hPen[color]);
+	SelectObject(hdc, hBrush[color]);
+
+	switch (type)
+	{
+	case PaintScene::LINE:
+		MoveToEx(hdc, startPos.x, startPos.y, nullptr);
+		LineTo(hdc, mousePos.x, mousePos.y);
+		break;
+	case PaintScene::RECT:
+		Rectangle(hdc, startPos.x, startPos.y, mousePos.x, mousePos.y);
+		break;
+	case PaintScene::ELLIPSE:
+		Ellipse(hdc, startPos.x, startPos.y, mousePos.x, mousePos.y);
+		break;
+	default:
+		break;
+	}
+}
+
+void PaintScene::Debug()
+{
+	wstring str;
+
+	str = L"1: PEN, 2: LINE, 3: RECT, 4: ELLIPSE";
+	TextOut(hdc, 0, 0, str.c_str(), str.size());
+
+	str = L"F1: BLACK, F2: RED, F3: GREEN, F4: BLUE";
+	TextOut(hdc, 0, 20, str.c_str(), str.size());
+
 }

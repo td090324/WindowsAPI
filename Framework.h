@@ -15,6 +15,8 @@
 #include <tchar.h>
 
 #include <string>
+#include <vector>
+#include <map>
 using namespace std;
 
 #define COLOR_BLACK RGB(0,0,0)

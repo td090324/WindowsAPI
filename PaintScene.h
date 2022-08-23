@@ -1,4 +1,5 @@
 #pragma once
+
 class PaintScene : public Scene
 {
 	enum Color
@@ -17,6 +18,16 @@ class PaintScene : public Scene
 		ELLIPSE
 	};
 
+	struct Data
+	{
+		Color color;
+		Type type;
+
+		POINT startPos = {};
+		POINT endPos = {};
+
+	};
+
 public:
 	PaintScene();
 	~PaintScene();
@@ -32,6 +43,10 @@ public:
 
 	void SetState();
 
+	void Preview();
+
+	void Debug();
+
 private:
 	POINT startPos = {};
 	POINT	endPos = {};
@@ -45,6 +60,8 @@ private:
 	Type type = PEN;
 
 	HDC hdc;
+
+	vector<Data> objects;
 };
 
 

@@ -143,8 +143,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     break;
     case WM_TIMER:
     {
-        InvalidateRect(hWnd, nullptr, false); //사각형을 무효화 시키는 함수
-        mainGame->Update();
+         mainGame->Update();
+         InvalidateRect(hWnd, nullptr, true); //사각형을 무효화 시키는 함수
     }
         break;
     case WM_COMMAND:
