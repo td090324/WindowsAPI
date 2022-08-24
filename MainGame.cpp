@@ -6,7 +6,9 @@ MainGame::MainGame()
 	//업캐스팅
 	//scene = new TutorialScene();
 
-	scene = new PaintScene();
+	//scene = new PaintScene();
+
+	scene = new CollisionScene();
 }
 
 MainGame::~MainGame()

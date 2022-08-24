@@ -25,12 +25,17 @@ using namespace std;
 #define COLOR_GREEN RGB(0,255,0)
 #define COLOR_BLUE RGB(0,0,255)
 
+#include "Point.h"
+#include "Rect.h"
+
+
+
 #include "Scene.h"
 #include "TutorialScene.h"
 #include "PaintScene.h"
-
+#include "CollisionScene.h"
 
 #include "MainGame.h"
 
-extern POINT mousePos;	//다른 파일에서도 해당 전역 변수를 사용 가능하게끔.
+extern Point mousePos;	//다른 파일에서도 해당 전역 변수를 사용 가능하게끔.
 extern HWND hWnd;

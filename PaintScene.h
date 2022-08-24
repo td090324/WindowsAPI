@@ -23,8 +23,8 @@ class PaintScene : public Scene
 		Color color;
 		Type type;
 
-		POINT startPos = {};
-		POINT endPos = {};
+		Point startPos = {};
+		Point endPos = {};
 
 	};
 
@@ -48,8 +48,8 @@ public:
 	void Debug();
 
 private:
-	POINT startPos = {};
-	POINT	endPos = {};
+	Point startPos = {};
+	Point	endPos = {};
 
 	HPEN	 hPen[4] = {};
 	HBRUSH hBrush[4] = {};

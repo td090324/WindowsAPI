@@ -9,9 +9,9 @@ PaintScene::PaintScene()
 	hPen[BLUE]	= CreatePen(PS_SOLID, 3, COLOR_BLUE);
 
 	hBrush[BLACK] = CreateSolidBrush(COLOR_BLACK);
-	hBrush[RED] = CreateSolidBrush(COLOR_RED);
+	hBrush[RED] =	CreateSolidBrush(COLOR_RED);
 	hBrush[GREEN] = CreateSolidBrush(COLOR_GREEN);
-	hBrush[BLUE] = CreateSolidBrush(COLOR_BLUE);
+	hBrush[BLUE] =	CreateSolidBrush(COLOR_BLUE);
 
 	hdc = GetDC(hWnd);
 }

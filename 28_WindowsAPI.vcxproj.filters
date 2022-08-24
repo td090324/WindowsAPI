@@ -19,6 +19,9 @@
     <Filter Include="Scene">
       <UniqueIdentifier>{2dbc1a59-9d22-4c81-94ef-a436b06aa0f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{7bd62e65-a800-43d1-91dd-775f29b31423}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework.h">
@@ -45,6 +48,15 @@
     <ClInclude Include="PaintScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="CollisionScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>Object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework.cpp">
@@ -61,6 +73,15 @@
     </ClCompile>
     <ClCompile Include="PaintScene.cpp">
       <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Rect.cpp">
+      <Filter>Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
