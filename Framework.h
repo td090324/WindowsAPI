@@ -25,8 +25,14 @@ using namespace std;
 #define COLOR_GREEN RGB(0,255,0)
 #define COLOR_BLUE RGB(0,0,255)
 
+
 #include "Point.h"
+#include "Math.h"
+
+using namespace Math;
+
 #include "Rect.h"
+#include "Circle.h"
 
 
 
