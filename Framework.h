@@ -17,6 +17,9 @@
 #include <string>
 #include <vector>
 #include <map>
+
+#include <ctime>
+
 using namespace std;
 
 #define COLOR_BLACK RGB(0,0,0)
@@ -34,12 +37,13 @@ using namespace Math;
 #include "Rect.h"
 #include "Circle.h"
 
-
+#include "Poo.h"
 
 #include "Scene.h"
 #include "TutorialScene.h"
 #include "PaintScene.h"
 #include "CollisionScene.h"
+#include "AvoidGameScene.h"
 
 #include "MainGame.h"
 

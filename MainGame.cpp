@@ -8,7 +8,8 @@ MainGame::MainGame()
 
 	//scene = new PaintScene();
 
-	scene = new CollisionScene();
+	//scene = new CollisionScene();
+	scene = new AvoidGameScene();
 }
 
 MainGame::~MainGame()

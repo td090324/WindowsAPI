@@ -141,6 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AvoidGameScene.h" />
     <ClInclude Include="Circle.h" />
     <ClInclude Include="CollisionScene.h" />
     <ClInclude Include="Main.h" />
@@ -149,6 +150,7 @@
     <ClInclude Include="Math.h" />
     <ClInclude Include="PaintScene.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="Poo.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Scene.h" />
@@ -156,6 +158,7 @@
     <ClInclude Include="TutorialScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AvoidGameScene.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="CollisionScene.cpp" />
     <ClCompile Include="Framework.cpp">
@@ -166,6 +169,7 @@
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="PaintScene.cpp" />
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Poo.cpp" />
     <ClCompile Include="Rect.cpp" />
     <ClCompile Include="TutorialScene.cpp" />
   </ItemGroup>

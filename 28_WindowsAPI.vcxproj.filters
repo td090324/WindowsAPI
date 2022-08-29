@@ -66,6 +66,12 @@
     <ClInclude Include="Math.h">
       <Filter>Utility</Filter>
     </ClInclude>
+    <ClInclude Include="AvoidGameScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Poo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework.cpp">
@@ -97,6 +103,12 @@
     </ClCompile>
     <ClCompile Include="Math.cpp">
       <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="AvoidGameScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Poo.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
