@@ -142,7 +142,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AvoidGameScene.h" />
+    <ClInclude Include="AvoidPlayer.h" />
     <ClInclude Include="Circle.h" />
+    <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionScene.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Framework.h" />
@@ -159,7 +161,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AvoidGameScene.cpp" />
+    <ClCompile Include="AvoidPlayer.cpp" />
     <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="Collision.cpp" />
     <ClCompile Include="CollisionScene.cpp" />
     <ClCompile Include="Framework.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

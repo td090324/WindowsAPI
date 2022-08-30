@@ -102,7 +102,7 @@ bool CollisionScene::Collision(Circle* circle, Point point)
 
 	double distance =  Math::Distance(circle->Pos(), point);
 
-	return circle1->Radius() > distance;
+	return circle->Radius() > distance;
 }
 
 bool CollisionScene::Collision(Circle* c1, Circle* c2)

@@ -37,7 +37,10 @@ using namespace Math;
 #include "Rect.h"
 #include "Circle.h"
 
+#include "Collision.h"
+
 #include "Poo.h"
+#include "AvoidPlayer.h"
 
 #include "Scene.h"
 #include "TutorialScene.h"

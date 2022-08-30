@@ -23,6 +23,9 @@ public:
 
 	void CreateObject();
 
+	Rect* GetRect() { return rect; }
+	Circle* GetCircle() { return circle; }
+
 private:
 	Rect*	  rect = nullptr;
 	Circle* circle = nullptr;
@@ -31,6 +34,7 @@ private:
 	Color color = RED;
 
 	HBRUSH brushes[3];
+	HBRUSH oldBrush = nullptr;
 
 	double speed = 1;
 

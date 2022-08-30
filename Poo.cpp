@@ -31,13 +31,13 @@ void Poo::Render(HDC hdc)
 	switch (color)
 	{
 	case Poo::RED:
-		SelectObject(hdc,brushes[RED]);
+		oldBrush = (HBRUSH)SelectObject(hdc,brushes[RED]);
 		break;
 	case Poo::GREEN:
-		SelectObject(hdc, brushes[GREEN]);
+		oldBrush = (HBRUSH)SelectObject(hdc, brushes[GREEN]);
 		break;
 	case Poo::BLUE:
-		SelectObject(hdc, brushes[BLUE]);
+		oldBrush = (HBRUSH)SelectObject(hdc, brushes[BLUE]);
 		break;
 	}
 
@@ -45,6 +45,8 @@ void Poo::Render(HDC hdc)
 		rect->Render(hdc);
 	else
 		circle->Render(hdc);
+
+	SelectObject(hdc, oldBrush);
 }
 
 void Poo::CreateObject()

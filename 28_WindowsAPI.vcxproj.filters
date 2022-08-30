@@ -25,6 +25,12 @@
     <Filter Include="Utility">
       <UniqueIdentifier>{8fe399b1-acc9-44fb-9cf2-57a3cd54ed66}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject">
+      <UniqueIdentifier>{b0b3bee7-a908-4369-b5f8-9d7ec9a94731}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\AvoidGame">
+      <UniqueIdentifier>{92d3953c-11dd-4160-a2d6-c8cb6de3ac9a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework.h">
@@ -70,7 +76,13 @@
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="Poo.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>GameObject\AvoidGame</Filter>
+    </ClInclude>
+    <ClInclude Include="AvoidPlayer.h">
+      <Filter>GameObject\AvoidGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -108,7 +120,13 @@
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="Poo.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>GameObject\AvoidGame</Filter>
+    </ClCompile>
+    <ClCompile Include="AvoidPlayer.cpp">
+      <Filter>GameObject\AvoidGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Utility</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
