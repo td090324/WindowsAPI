@@ -41,12 +41,14 @@ using namespace Math;
 
 #include "Poo.h"
 #include "AvoidPlayer.h"
+#include "Tank.h"
 
 #include "Scene.h"
 #include "TutorialScene.h"
 #include "PaintScene.h"
 #include "CollisionScene.h"
 #include "AvoidGameScene.h"
+#include "AngleScene.h"
 
 #include "MainGame.h"
 

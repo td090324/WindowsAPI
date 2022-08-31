@@ -31,6 +31,9 @@
     <Filter Include="GameObject\AvoidGame">
       <UniqueIdentifier>{92d3953c-11dd-4160-a2d6-c8cb6de3ac9a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Fortress">
+      <UniqueIdentifier>{9308adc8-bec6-48f3-9c93-4a095b70265a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework.h">
@@ -84,6 +87,12 @@
     <ClInclude Include="Collision.h">
       <Filter>Utility</Filter>
     </ClInclude>
+    <ClInclude Include="AngleScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Tank.h">
+      <Filter>GameObject\Fortress</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework.cpp">
@@ -127,6 +136,12 @@
     </ClCompile>
     <ClCompile Include="Collision.cpp">
       <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="AngleScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Tank.cpp">
+      <Filter>GameObject\Fortress</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -9,7 +9,9 @@ MainGame::MainGame()
 	//scene = new PaintScene();
 
 	//scene = new CollisionScene();
-	scene = new AvoidGameScene();
+	//scene = new AvoidGameScene();
+	
+	scene = new AngleScene();
 }
 
 MainGame::~MainGame()
