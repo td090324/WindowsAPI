@@ -36,11 +36,16 @@ using namespace Math;
 
 #include "Rect.h"
 #include "Circle.h"
+#include "Line.h"
 
 #include "Collision.h"
 
+//Avoid
 #include "Poo.h"
 #include "AvoidPlayer.h"
+
+//Fortress
+#include "CannonBall.h"
 #include "Tank.h"
 
 #include "Scene.h"

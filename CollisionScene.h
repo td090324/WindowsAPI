@@ -35,6 +35,9 @@ private:
 	Circle* circle1;
 	Circle* circle2;
 
+	Line* line1;
+	Line* line2;
+
 	double speed = 3.0;
 };
 

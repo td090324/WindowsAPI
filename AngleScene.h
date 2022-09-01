@@ -9,6 +9,6 @@ public:
 	virtual void Render(HDC hdc) override;	//화면을 갱신해주는 함수.
 
 private:
-
+	Tank* tank;
 };
 

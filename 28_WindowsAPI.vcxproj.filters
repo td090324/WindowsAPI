@@ -93,6 +93,12 @@
     <ClInclude Include="Tank.h">
       <Filter>GameObject\Fortress</Filter>
     </ClInclude>
+    <ClInclude Include="Line.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="CannonBall.h">
+      <Filter>GameObject\Fortress</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework.cpp">
@@ -141,6 +147,12 @@
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="Tank.cpp">
+      <Filter>GameObject\Fortress</Filter>
+    </ClCompile>
+    <ClCompile Include="Line.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="CannonBall.cpp">
       <Filter>GameObject\Fortress</Filter>
     </ClCompile>
   </ItemGroup>

@@ -12,6 +12,9 @@ CollisionScene::CollisionScene()
 
 	circle1 = new Circle(Point(300, 100), 50);
 	circle2 = new Circle(Point(500, 100), 50);
+
+	line1 = new Line(Point(0, 0), Point(100, 100));
+	line2 = new Line(Point(400, 100), Point(100, 400));
 }
 
 CollisionScene::~CollisionScene()
@@ -21,6 +24,9 @@ CollisionScene::~CollisionScene()
 
 	delete circle1;
 	delete circle2;
+
+	delete line1;
+	delete line2;
 }
 
 void CollisionScene::Update()
@@ -43,22 +49,27 @@ void CollisionScene::Update()
 	}
 
 	//Circle1이 마우스 위치를 따라다니게
-	circle1->Pos() = mousePos;
+	//circle1->Pos() = mousePos;
+	line1->End() = mousePos;
 }
 
 
 void CollisionScene::Render(HDC hdc)
 {
+	rect1->Render(hdc);
+	rect2->Render(hdc);
+
 	if (Collision(rect1, circle1))
 		SelectObject(hdc, rBrush);
 	else
 		SelectObject(hdc, gBrush);
 
-	//rect1->Render(hdc);
-	//rect2->Render(hdc);
 
 	circle1->Render(hdc);
 	circle2->Render(hdc);
+
+	line1->Render(hdc);
+	line2->Render(hdc);
 }
 
 bool CollisionScene::Collision(Rect* rect, Point point)
