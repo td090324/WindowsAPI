@@ -46,6 +46,6 @@ void CannonBall::Move()
 
 	ball->Pos().y += gravity;
 
-	//중력가속도 적용
+	//중력가속도로 중력을 적용
 	gravity += 0.98;
 }
