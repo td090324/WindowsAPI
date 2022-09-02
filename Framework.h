@@ -30,6 +30,7 @@ using namespace std;
 
 
 #include "Point.h"
+#include "Vector2.h"
 #include "Math.h"
 
 using namespace Math;
@@ -46,6 +47,7 @@ using namespace Math;
 
 //Fortress
 #include "CannonBall.h"
+#include "CannonBallManager.h"
 #include "Tank.h"
 
 #include "Scene.h"

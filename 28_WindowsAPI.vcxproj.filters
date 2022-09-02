@@ -99,6 +99,12 @@
     <ClInclude Include="CannonBall.h">
       <Filter>GameObject\Fortress</Filter>
     </ClInclude>
+    <ClInclude Include="CannonBallManager.h">
+      <Filter>GameObject\Fortress</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework.cpp">
@@ -154,6 +160,12 @@
     </ClCompile>
     <ClCompile Include="CannonBall.cpp">
       <Filter>GameObject\Fortress</Filter>
+    </ClCompile>
+    <ClCompile Include="CannonBallManager.cpp">
+      <Filter>GameObject\Fortress</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Utility</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

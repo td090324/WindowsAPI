@@ -145,6 +145,7 @@
     <ClInclude Include="AvoidGameScene.h" />
     <ClInclude Include="AvoidPlayer.h" />
     <ClInclude Include="CannonBall.h" />
+    <ClInclude Include="CannonBallManager.h" />
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionScene.h" />
@@ -162,12 +163,14 @@
     <ClInclude Include="Tank.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TutorialScene.h" />
+    <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AngleScene.cpp" />
     <ClCompile Include="AvoidGameScene.cpp" />
     <ClCompile Include="AvoidPlayer.cpp" />
     <ClCompile Include="CannonBall.cpp" />
+    <ClCompile Include="CannonBallManager.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="CollisionScene.cpp" />
@@ -184,6 +187,7 @@
     <ClCompile Include="Rect.cpp" />
     <ClCompile Include="Tank.cpp" />
     <ClCompile Include="TutorialScene.cpp" />
+    <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="28_WindowsAPI.rc" />

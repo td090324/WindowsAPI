@@ -7,7 +7,8 @@ Tank::Tank()
 
 	barrel = new Line(body->Pos(), Point(body->Pos().x + barrelLength, body->Pos().y));
 
-	ball = new CannonBall();
+	//ball = new CannonBall();
+	balls = new CannonBallManager();
 }
 
 Tank::~Tank()
@@ -15,7 +16,7 @@ Tank::~Tank()
 	delete body;
 	delete barrel;
 
-	delete ball;
+	delete balls;
 }
 
 void Tank::Update()
@@ -26,7 +27,7 @@ void Tank::Update()
 
 	FireBall();
 
-	ball->Update();
+	balls->Update();
 }
 
 void Tank::Render(HDC hdc)
@@ -34,7 +35,7 @@ void Tank::Render(HDC hdc)
 	body->Render(hdc);
 	barrel->Render(hdc);
 
-	ball->Render(hdc);
+	balls->Render(hdc);
 }
 
 void Tank::RotateBarrel()
@@ -48,6 +49,10 @@ void Tank::RotateBarrel()
 	//포신 End값 변경
 	barrel->End().x = body->Pos().x + barrelLength * cos(barrelAngle);
 	barrel->End().y = body->Pos().y - barrelLength * sin(barrelAngle);
+
+	//포신을 마우스 위치를 바라보게 방향 구하기
+	//Vector2 dir = mousePos
+
 }
 
 void Tank::MoveBody()
@@ -65,5 +70,5 @@ void Tank::MoveBody()
 void Tank::FireBall()
 {
 	if (GetAsyncKeyState(VK_SPACE))
-		ball->Fire(barrel->End(), barrelAngle, 20);
+		balls->Fire(barrel->End(), barrelAngle, 200);
 }

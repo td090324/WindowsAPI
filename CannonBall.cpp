@@ -34,10 +34,18 @@ void CannonBall::Fire(Point pos, double angle, double power)
 	ball->Pos() = pos;
 	this->angle = angle;
 	this->speed = power * 0.1;
+
+	//중력 초기화
+	gravity = 0;
 }
 
 void CannonBall::Move()
 {
 	ball->Pos().x += cos(angle) * speed;
 	ball->Pos().y -= sin(angle) * speed;
+
+	ball->Pos().y += gravity;
+
+	//중력가속도 적용
+	gravity += 0.98;
 }

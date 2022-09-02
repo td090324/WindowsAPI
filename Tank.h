@@ -20,7 +20,7 @@ private:
 	double barrelAngle	=   0;	//포신 각도
 	double speed		=	5;	//탱크 속도
 
-	CannonBall* ball;
-
+	//CannonBall* ball;
+	CannonBallManager* balls;
 };
 

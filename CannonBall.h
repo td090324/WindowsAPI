@@ -13,11 +13,15 @@ public:
 
 	void Move();
 
+	bool IsFire() { return isFire; }
+
 private:
 	Circle* ball;
 	
 	double angle = 0;
 	double speed = 0;
+
+	double gravity = 0;
 
 	bool isFire = false;
 };
