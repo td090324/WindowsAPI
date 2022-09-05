@@ -2,7 +2,7 @@
 class Circle
 {
 public:
-	Circle(Point pos, double radius);
+	Circle(Vector2 pos, double radius);
 	~Circle();
 
 	void Render(HDC hdc);
@@ -12,11 +12,11 @@ public:
 	double Top()	{ return pos.y - radius; }
 	double bottom()	{ return pos.y + radius; }
 
-	Point& Pos() { return pos; }
+	Vector2& Pos() { return pos; }
 	double Radius() { return radius; }
 
 private:
-	Point pos = {};
+	Vector2 pos = {};
 	double radius = 0;
 };
 

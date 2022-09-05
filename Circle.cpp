@@ -1,7 +1,7 @@
 #include "Framework.h"
 #include "Circle.h"
 
-Circle::Circle(Point pos, double radius)
+Circle::Circle(Vector2 pos, double radius)
 	:pos(pos), radius(radius)
 {
 }

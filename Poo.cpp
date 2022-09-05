@@ -57,7 +57,7 @@ void Poo::CreateObject()
 
 	color = (Color)(rand() % 3);
 
-	Point pos;
+	Vector2 pos;
 	pos.x = rand() % 1000 + 100;
 	pos.y = -100;
 
@@ -67,7 +67,7 @@ void Poo::CreateObject()
 	{
 	case Poo::RECT:
 	{
-		rect = new Rect(pos, Point(size, size));
+		rect = new Rect(pos, Vector2(size, size));
 	}
 		break;
 	case Poo::CIRCLE:

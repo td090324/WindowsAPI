@@ -4,6 +4,13 @@ class Vector2
 public:
 	Vector2();
 	Vector2(double x, double y);
+
+	double Length();
+
+	//노멀됐을때 값을 반환하는것
+	Vector2 Normal();
+	//정규화만 해버리는 것.
+	void Normalize();
 	
 	//연산자 함수 빈번하게 호출되기때문에 레퍼런스로 받아온다.
 	//하지만 그러면 원본에 수정이 가능하기때문에 const로 막아주는 것.
@@ -22,6 +29,8 @@ public:
 
 	double x = 0;
 	double y = 0;
+
+
 
 };
 

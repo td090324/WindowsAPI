@@ -2,7 +2,7 @@
 #include "Line.h"
 
 
-Line::Line(Point start, Point end)
+Line::Line(Vector2 start, Vector2 end)
 	:start(start), end(end)
 {
 }

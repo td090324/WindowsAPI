@@ -33,7 +33,7 @@ void CannonBallManager::Render(HDC hdc)
 		cannonBall->Render(hdc);
 }
 
-void CannonBallManager::Fire(Point pos, double angle, double power)
+void CannonBallManager::Fire(Vector2 pos, double angle, double power)
 {
 	for (CannonBall* cannonBall : cannonBalls)
 	{
@@ -41,6 +41,19 @@ void CannonBallManager::Fire(Point pos, double angle, double power)
 		if (!cannonBall->IsFire())
 		{
 			cannonBall->Fire(pos, angle, power);
+			return;
+		}
+	}
+}
+
+void CannonBallManager::Fire(Vector2 pos, Vector2 dir, double power)
+{
+	for (CannonBall* cannonBall : cannonBalls)
+	{
+		//포탄이 하나만 보이게끔 조건을 걸어둔다.
+		if (!cannonBall->IsFire())
+		{
+			cannonBall->Fire(pos, dir, power);
 			return;
 		}
 	}

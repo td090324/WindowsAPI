@@ -10,6 +10,24 @@ Vector2::Vector2(double x, double y)
 {
 }
 
+double Vector2::Length()
+{
+	return sqrt(pow(x,2)+pow(y,2));
+}
+
+Vector2 Vector2::Normal()
+{
+	//return Vector2(this->x / Length(), this->y / Length());
+
+	//this는 나를 가리키는 포인터이다.
+	return *this / Length();
+}
+
+void Vector2::Normalize()
+{
+	*this /= Length();
+}
+
 Vector2 Vector2::operator+(const Vector2& other) const
 {
 	return Vector2(this->x + other.x, this->y + other.y);

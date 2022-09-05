@@ -10,7 +10,7 @@ Rect::Rect(double left, double top, double right, double bottom)
 	size.y = abs(bottom - top);
 }
 
-Rect::Rect(Point pos, Point size)
+Rect::Rect(Vector2 pos, Vector2 size)
 	:pos(pos), size(size)
 {
 }
@@ -22,4 +22,12 @@ Rect::~Rect()
 void Rect::Render(HDC hdc)
 {
 	Rectangle(hdc, Left(), Top(), Right(), Bottom());
+}
+
+void Rect::SetRect(double left, double top, double right, double bottom)
+{
+	pos.x = (left + right) * 0.5;
+	pos.y = (top + bottom) * 0.5;
+	size.x = abs(right - left);
+	size.y = abs(bottom - top);
 }

@@ -59,5 +59,5 @@ using namespace Math;
 
 #include "MainGame.h"
 
-extern Point mousePos;	//다른 파일에서도 해당 전역 변수를 사용 가능하게끔.
+extern Vector2 mousePos;	//다른 파일에서도 해당 전역 변수를 사용 가능하게끔.
 extern HWND hWnd;

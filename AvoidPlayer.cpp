@@ -3,7 +3,7 @@
 
 AvoidPlayer::AvoidPlayer()
 {
-	rect = new Rect(Point(600,600),Point(100,50));
+	rect = new Rect(Vector2(600,600),Vector2(100,50));
 }
 
 AvoidPlayer::~AvoidPlayer()

@@ -7,14 +7,14 @@ CollisionScene::CollisionScene()
 	gBrush = CreateSolidBrush(COLOR_GREEN);
 	bBrush = CreateSolidBrush(COLOR_BLUE);
 
-	rect1 = new Rect(Point(500, 500), Point(100, 100));
-	rect2 = new Rect(Point(100, 100), Point(100, 100));
+	rect1 = new Rect(Vector2(500, 500), Vector2(100, 100));
+	rect2 = new Rect(Vector2(100, 100), Vector2(100, 100));
 
-	circle1 = new Circle(Point(300, 100), 50);
-	circle2 = new Circle(Point(500, 100), 50);
+	circle1 = new Circle(Vector2(300, 100), 50);
+	circle2 = new Circle(Vector2(500, 100), 50);
 
-	line1 = new Line(Point(0, 0), Point(100, 100));
-	line2 = new Line(Point(400, 100), Point(100, 400));
+	line1 = new Line(Vector2(0, 0), Vector2(100, 100));
+	line2 = new Line(Vector2(400, 100), Vector2(100, 400));
 }
 
 CollisionScene::~CollisionScene()
@@ -72,7 +72,7 @@ void CollisionScene::Render(HDC hdc)
 	line2->Render(hdc);
 }
 
-bool CollisionScene::Collision(Rect* rect, Point point)
+bool CollisionScene::Collision(Rect* rect, Vector2 point)
 {
 	if
 	(
@@ -104,7 +104,7 @@ bool CollisionScene::Collision(Rect* r1, Rect* r2)
 	return false;
 }
 
-bool CollisionScene::Collision(Circle* circle, Point point)
+bool CollisionScene::Collision(Circle* circle, Vector2 point)
 {
 	//double a = circle1->Pos().x - point.x;
 	//double b = circle1->Pos().y - point.y;
@@ -132,17 +132,17 @@ bool CollisionScene::Collision(Rect* rect, Circle* circle)
 		(circle->Pos().y > rect->Top() && circle->Pos().y < rect->Bottom())
 	)
 	{
-		Rect cRect(circle->Pos(), Point(circle->Radius() * 2, circle->Radius() * 2));
+		Rect cRect(circle->Pos(), Vector2(circle->Radius() * 2, circle->Radius() * 2));
 		return Collision(rect, &cRect);
 	}
 	else //원과 꼭지점의 충돌
 	{
-		Point edges[4];
+		Vector2 edges[4];
 
-		edges[0] = Point(rect->Left(), rect->Top());
-		edges[1] = Point(rect->Left(), rect->Bottom());
-		edges[2] = Point(rect->Right(), rect->Top());
-		edges[3] = Point(rect->Right(), rect->Bottom());
+		edges[0] = Vector2(rect->Left(), rect->Top());
+		edges[1] = Vector2(rect->Left(), rect->Bottom());
+		edges[2] = Vector2(rect->Right(), rect->Top());
+		edges[3] = Vector2(rect->Right(), rect->Bottom());
 
 		for (UINT i = 0; i < 4; i++)
 		{

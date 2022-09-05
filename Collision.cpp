@@ -2,7 +2,7 @@
 #include "Collision.h"
 
 
-bool Collision::Collision(Rect* rect, Point point)
+bool Collision::Collision(Rect* rect, Vector2 point)
 {
 	if
 		(
@@ -18,7 +18,7 @@ bool Collision::Collision(Rect* rect, Point point)
 	return false;
 }
 
-bool Collision::Collision(Point point, Rect* rect)
+bool Collision::Collision(Vector2 point, Rect* rect)
 {
 	return Collision(rect, point);
 }
@@ -39,7 +39,7 @@ bool Collision::Collision(Rect* r1, Rect* r2)
 	return false;
 }
 
-bool Collision::Collision(Circle* circle, Point point)
+bool Collision::Collision(Circle* circle, Vector2 point)
 {
 	//double a = circle1->Pos().x - point.x;
 	//double b = circle1->Pos().y - point.y;
@@ -51,7 +51,7 @@ bool Collision::Collision(Circle* circle, Point point)
 	return circle->Radius() > distance;
 }
 
-bool Collision::Collision(Point point, Circle* circle)
+bool Collision::Collision(Vector2 point, Circle* circle)
 {
 	return Collision(circle, point);
 }
@@ -72,17 +72,17 @@ bool Collision::Collision(Rect* rect, Circle* circle)
 			(circle->Pos().y > rect->Top() && circle->Pos().y < rect->Bottom())
 			)
 	{
-		Rect cRect(circle->Pos(), Point(circle->Radius() * 2, circle->Radius() * 2));
+		Rect cRect(circle->Pos(), Vector2(circle->Radius() * 2, circle->Radius() * 2));
 		return Collision(rect, &cRect);
 	}
 	else //원과 꼭지점의 충돌
 	{
-		Point edges[4];
+		Vector2 edges[4];
 
-		edges[0] = Point(rect->Left(), rect->Top());
-		edges[1] = Point(rect->Left(), rect->Bottom());
-		edges[2] = Point(rect->Right(), rect->Top());
-		edges[3] = Point(rect->Right(), rect->Bottom());
+		edges[0] = Vector2(rect->Left(), rect->Top());
+		edges[1] = Vector2(rect->Left(), rect->Bottom());
+		edges[2] = Vector2(rect->Right(), rect->Top());
+		edges[3] = Vector2(rect->Right(), rect->Bottom());
 
 		for (UINT i = 0; i < 4; i++)
 		{
