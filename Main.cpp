@@ -105,8 +105,16 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
-   hWnd = CreateWindowW(szWindowClass, L"WindowsAPI", WS_OVERLAPPEDWINDOW | WS_VSCROLL | WS_HSCROLL,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+   RECT rect = { 0,0,WIN_WIDTH, WIN_HEIGHT };
+   //생성한 렉트를 윈도우에 적응, 동기화 시키는 함수
+   AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
+
+   //AdjustWindowRect 거치면 값이 조금 변경됨. 새롭게 적용시켜줘야한다.
+   long width = rect.right - rect.left;
+   long height = rect.bottom - rect.top;
+
+   hWnd = CreateWindowW(szWindowClass, L"WindowsAPI", WS_OVERLAPPEDWINDOW,
+      0, 0, width, height, nullptr, nullptr, hInstance, nullptr);
 
    if (!hWnd)
    {

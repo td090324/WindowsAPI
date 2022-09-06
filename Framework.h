@@ -28,6 +28,12 @@ using namespace std;
 #define COLOR_GREEN RGB(0,255,0)
 #define COLOR_BLUE RGB(0,0,255)
 
+#define WIN_WIDTH 600
+#define WIN_HEIGHT 800
+
+#define WIN_CENTER Vector2(WIN_WIDTH * 0.5, WIN_HEIGHT * 0.5) 
+
+
 
 #include "Point.h"
 #include "Vector2.h"
@@ -50,12 +56,16 @@ using namespace Math;
 #include "CannonBallManager.h"
 #include "Tank.h"
 
+//Arkanoid
+#include "ArkaPlayer.h"
+
 #include "Scene.h"
 #include "TutorialScene.h"
 #include "PaintScene.h"
 #include "CollisionScene.h"
 #include "AvoidGameScene.h"
 #include "AngleScene.h"
+#include "ArkanoidScene.h"
 
 #include "MainGame.h"
 

@@ -34,6 +34,9 @@
     <Filter Include="GameObject\Fortress">
       <UniqueIdentifier>{9308adc8-bec6-48f3-9c93-4a095b70265a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Arkanoid">
+      <UniqueIdentifier>{45391798-b713-426c-95cd-d1d539d50cdd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework.h">
@@ -105,6 +108,12 @@
     <ClInclude Include="Vector2.h">
       <Filter>Utility</Filter>
     </ClInclude>
+    <ClInclude Include="ArkanoidScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ArkaPlayer.h">
+      <Filter>GameObject\Arkanoid</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework.cpp">
@@ -166,6 +175,12 @@
     </ClCompile>
     <ClCompile Include="Vector2.cpp">
       <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkanoidScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ArkaPlayer.cpp">
+      <Filter>GameObject\Arkanoid</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

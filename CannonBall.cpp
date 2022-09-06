@@ -25,6 +25,7 @@ void CannonBall::Render(HDC hdc)
 		return;
 
 	ball->Render(hdc);
+
 }
 
 void CannonBall::Fire(Vector2 pos, double angle, double power)
@@ -58,8 +59,40 @@ void CannonBall::Move()
 
 	ball->Pos() += dir * speed;
 
-	ball->Pos().y += gravity;
 
+	//왼쪽 벽에 부딪히면 공이 튕기게 적용
+	if (ball->Left() <= 0)
+	{
+		dir.x *= -1;
+
+		//값을 보정해준다. (예외처리)
+		//보정을 안해주면 벽에 계속 갇히는 상황이 나올수도있다.
+		ball->Pos().x = ball->Radius();
+	}
+
+	//오른쪽 벽
+	if (ball->Right() >= WIN_WIDTH)
+	{
+		dir.x *= -1;
+		ball->Pos().x = WIN_WIDTH - ball->Radius();
+	}
+
+	//위쪽 벽
+	if (ball->Top() <= 0)
+	{
+		dir.y *= -1;
+		ball->Pos().y = ball->Radius();
+	}
+
+	//아랫 벽
+	if (ball->bottom() >= WIN_HEIGHT)
+	{
+		dir.y *= -1;
+		ball->Pos().y = WIN_HEIGHT - ball->Radius();
+	}
+
+
+	//ball->Pos().y += gravity;
 	//중력가속도로 중력을 적용
-	gravity += 0.98;
+	//gravity += 0.98;
 }
