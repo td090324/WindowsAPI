@@ -73,15 +73,9 @@ void Ball::CollisionWall()
 
 void Ball::CoolisionPlayer()
 {
-	if
-	(
-			circle->Left() >= player->GetRect()->Left() &&
-			circle->Right() <= player->GetRect()->Right() &&
-			circle->bottom() >= player->GetRect()->Top()
-	)
+	if(Collision::Collision(circle, player->GetRect()))
 	{
-		Vector2 tmep = (Vector2(player->GetRect()->Pos().x, player->GetRect()->Top())- circle->Pos()).Normal();
-		dir = tmep * -1;
+		dir = (Vector2(circle->Pos().x, player->GetRect()->Top())- Vector2(player->GetRect()->Pos().x, player->GetRect()->Bottom())).Normal();
 	}
 }
 
