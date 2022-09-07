@@ -10,6 +10,7 @@ public:
 
 private:
 	ArkaPlayer* player;
+	Ball* ball;
 
 };
 

@@ -58,6 +58,7 @@ using namespace Math;
 
 //Arkanoid
 #include "ArkaPlayer.h"
+#include "Ball.h"
 
 #include "Scene.h"
 #include "TutorialScene.h"
