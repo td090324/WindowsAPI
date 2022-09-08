@@ -21,7 +21,8 @@ void Ball::Update()
 	{
 		circle->Pos() += dir * speed;
 		CollisionWall();
-		CoolisionPlayer();
+		CollisionPlayer();
+		CollisionBrick();
 	}
 	else
 	{
@@ -71,13 +72,55 @@ void Ball::CollisionWall()
 	}
 }
 
-void Ball::CoolisionPlayer()
+void Ball::CollisionPlayer()
 {
-	if(Collision::Collision(circle, player->GetRect()))
+	if (Collision::Collision(this->circle, player->GetRect()))
 	{
-		dir = (Vector2(circle->Pos().x, player->GetRect()->Top())- Vector2(player->GetRect()->Pos().x, player->GetRect()->Bottom())).Normal();
+		dir = circle->Pos() - Vector2(player->GetRect()->Pos().x, player->GetRect()->Bottom() + 1);
+		dir.Normalize();
 	}
 }
+
+void Ball::CollisionBrick()
+{
+	for (UINT i = 0; i < bricks->capacity(); i++)
+	{
+		if (Collision::Collision(this->circle, bricks->at(i)->GetRect()))
+		{
+			//°øÀÌ º®µ¹ ¿ÞÂÊ¿¡ ºÎµúÈú ¶§
+			if (this->circle->Right() >= bricks->at(i)->GetRect()->Left())
+			{
+				dir.x *= -1;
+				circle->Pos().x = circle->Radius();
+			}
+
+			//¿À¸¥ÂÊ º®
+			if (circle->Right() >= WIN_WIDTH)
+			{
+				dir.x *= -1;
+				circle->Pos().x = WIN_WIDTH - circle->Radius();
+			}
+
+			//À§ÂÊ º®
+			if (circle->Top() <= 0)
+			{
+				dir.y *= -1;
+				circle->Pos().y = circle->Radius();
+			}
+
+			//¾Æ·§ º®
+			if (circle->bottom() >= WIN_HEIGHT)
+			{
+				isPlay = false;
+
+				dir = Vector2(+1, -1).Normal();
+			}
+		}
+	}
+
+}
+
+
 
 
 

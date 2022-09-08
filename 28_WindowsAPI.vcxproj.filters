@@ -117,6 +117,12 @@
     <ClInclude Include="Ball.h">
       <Filter>GameObject\Arkanoid</Filter>
     </ClInclude>
+    <ClInclude Include="Brick.h">
+      <Filter>GameObject\Arkanoid</Filter>
+    </ClInclude>
+    <ClInclude Include="BrickManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework.cpp">
@@ -187,6 +193,12 @@
     </ClCompile>
     <ClCompile Include="Ball.cpp">
       <Filter>GameObject\Arkanoid</Filter>
+    </ClCompile>
+    <ClCompile Include="Brick.cpp">
+      <Filter>GameObject\Arkanoid</Filter>
+    </ClCompile>
+    <ClCompile Include="BrickManager.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

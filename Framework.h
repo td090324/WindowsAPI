@@ -58,6 +58,8 @@ using namespace Math;
 
 //Arkanoid
 #include "ArkaPlayer.h"
+#include "Brick.h"
+#include "BrickManager.h"
 #include "Ball.h"
 
 #include "Scene.h"

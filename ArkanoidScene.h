@@ -11,6 +11,9 @@ public:
 private:
 	ArkaPlayer* player;
 	Ball* ball;
+	//Brick* brick;
+
+	BrickManager* bricks;
 
 };
 
