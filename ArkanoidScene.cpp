@@ -5,13 +5,11 @@ ArkanoidScene::ArkanoidScene()
 {
 	player = new ArkaPlayer();
 	
+	bricks = new BrickManager();
+
 	ball = new Ball();
 	ball->SetPlayer(player);
-
-	//brick = new Brick(WIN_CENTER, { 50,20 });
-
-	bricks = new BrickManager();
-	ball->SetBrickManager(bricks->GetBricks());
+	ball->SetBricks(bricks);
 }
 
 ArkanoidScene::~ArkanoidScene()
@@ -19,7 +17,6 @@ ArkanoidScene::~ArkanoidScene()
 	delete player;
 	delete ball;
 	//delete brick;
-
 	delete bricks;
 }
 
@@ -29,7 +26,6 @@ void ArkanoidScene::Update()
 	  ball->Update();
 	 //brick->Update();
 
-	 bricks->Update();
 }
 
 void ArkanoidScene::Render(HDC hdc)

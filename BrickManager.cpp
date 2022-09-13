@@ -17,8 +17,8 @@ BrickManager::BrickManager(UINT poolCOunt)
 	////////////////////////////
 	//1중 for문으로 벽돌 생성
 	//나눗셈, 나머지 연산자를 활용
-	UINT nX = 5;
-	UINT nY = 2;
+	UINT nX = 1;
+	UINT nY = 1;
 	UINT nBricks = nX * nY;
 
 	for (UINT i = 0; i < nBricks; i++)
@@ -38,11 +38,6 @@ BrickManager::~BrickManager()
 	bricks.clear();
 }
 
-void BrickManager::Update()
-{
-	for (Brick* brick : bricks)
-		brick->Update();
-}
 
 void BrickManager::Render(HDC hdc)
 {

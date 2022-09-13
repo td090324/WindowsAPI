@@ -71,3 +71,23 @@ void Vector2::operator/=(const double& value)
 	this->x /= value;
 	this->y /= value;
 }
+
+double Vector2::Dot(Vector2 v1, Vector2 v2)
+{
+	return ((v1.x * v2.x) + (v1.y * v2.y));
+}
+
+double Vector2::Cross(Vector2 v1, Vector2 v2)
+{
+	return ((v1.x * v2.y) - (v1.y * v2.x));
+}
+
+bool Vector2::IsBetween(Vector2 factor, Vector2 v1, Vector2 v2)
+{
+	//if (Cross(factor, v1) * Cross(factor, v2) < 0)
+	//	return true;
+
+	//두 수를 곱하면 같은 부호인지 아닌지 알 수 있다.
+	//부호가 달라야 true. 두 점 사이에 있다는 의미이기 때문에
+	return Cross(factor, v1) * Cross(factor, v2) < 0;
+}

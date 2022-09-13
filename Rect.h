@@ -20,6 +20,7 @@ public:
 
 	//레퍼런스로 외부에서 접근하면 Set 기능까지 가능.
 	Vector2& Pos(){ return pos; }
+	Vector2& Size() { return size; }
 
 
 private:

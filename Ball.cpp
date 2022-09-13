@@ -20,9 +20,10 @@ void Ball::Update()
 	if (isPlay)
 	{
 		circle->Pos() += dir * speed;
+		
 		CollisionWall();
 		CollisionPlayer();
-		CollisionBrick();
+		CollisionBricks();
 	}
 	else
 	{
@@ -81,43 +82,54 @@ void Ball::CollisionPlayer()
 	}
 }
 
-void Ball::CollisionBrick()
+void Ball::CollisionBricks()
 {
-	for (UINT i = 0; i < bricks->capacity(); i++)
+	for (Brick* brick : bricks->GetBricks())
 	{
-		if (Collision::Collision(this->circle, bricks->at(i)->GetRect()))
+		if (brick->GetHP() <= 0)
+			return;
+
+		//공에서 벽돌 중점을 향하는 벡터 구하기
+		Vector2 direction = this->circle->Pos() - brick->GetRect()->Pos();
+
+		Vector2 halfSize = brick->GetRect()->Size() * 0.5;
+
+		//벽돌 중점 기준 각 모서리를 향하는 벡터 구하기
+		Vector2 LT = Vector2(-halfSize.x, -halfSize.y);
+		Vector2 RT = Vector2(+halfSize.x, -halfSize.y);
+		Vector2 LB = Vector2(-halfSize.x, +halfSize.y);
+		Vector2 RB = Vector2(+halfSize.x, +halfSize.y);
+
+		if (Collision::Collision(this->circle, brick->GetRect()))
 		{
-			//공이 벽돌 왼쪽에 부딪힐 때
-			if (this->circle->Right() >= bricks->at(i)->GetRect()->Left())
-			{
-				dir.x *= -1;
-				circle->Pos().x = circle->Radius();
-			}
+			brick->GetHP()--;
 
-			//오른쪽 벽
-			if (circle->Right() >= WIN_WIDTH)
-			{
-				dir.x *= -1;
-				circle->Pos().x = WIN_WIDTH - circle->Radius();
-			}
-
-			//위쪽 벽
-			if (circle->Top() <= 0)
+			//위에서 아래로 공이 벽돌로 충돌할 때
+			if (Vector2::IsBetween(direction, LT, RT))
 			{
 				dir.y *= -1;
-				circle->Pos().y = circle->Radius();
 			}
-
-			//아랫 벽
-			if (circle->bottom() >= WIN_HEIGHT)
+			else if (Vector2::IsBetween(direction, LB, RB))
 			{
-				isPlay = false;
-
-				dir = Vector2(+1, -1).Normal();
+				dir.y *= -1;
 			}
+			else if (Vector2::IsBetween(direction, LB, LB))
+			{
+				dir.x *= -1;
+			}
+			else if (Vector2::IsBetween(direction, RB, RB))
+			{
+				dir.x *= -1;
+			}
+			else
+			{
+				dir *= -1;
+			}
+
+			return;
+
 		}
 	}
-
 }
 
 

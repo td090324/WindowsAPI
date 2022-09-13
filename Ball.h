@@ -9,11 +9,12 @@ public:
 	void Render(HDC hdc);
 
 	void SetPlayer(ArkaPlayer* player) { this->player = player; }
-	void SetBrickManager(vector<Brick*> bricks) { this->bricks = bricks; }
+	void SetBricks(BrickManager* bricks) { this->bricks = bricks; }
+
 
 	void CollisionWall();
 	void CollisionPlayer();
-	void CollisionBrick();
+	void CollisionBricks();
 
 
 
@@ -21,10 +22,10 @@ private:
 	Circle* circle;
 
 	ArkaPlayer* player = nullptr;
+	BrickManager* bricks = nullptr;
 
-	vector<Brick*>* bricks = nullptr;
 
-	double speed = 5;
+	double speed = 8;
 	
 	Vector2 dir = {};
 

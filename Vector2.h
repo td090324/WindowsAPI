@@ -27,6 +27,17 @@ public:
 	void operator*=(const double& value);
 	void operator/=(const double& value);
 
+	//내적
+	static double Dot(Vector2 v1, Vector2 v2);
+
+	//외적
+	//2d에서는 z축이 없으니까 계산하면 스칼라값이 나옴
+	//때문에 이론상 Vector가 반환이지만 지금은 double로
+	static double Cross(Vector2 v1, Vector2 v2);
+
+	//factor가 v2,v3 사이에 있는지 판단.
+	static bool IsBetween(Vector2 factor, Vector2 v1, Vector2 v2);
+
 	double x = 0;
 	double y = 0;
 

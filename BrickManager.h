@@ -7,8 +7,8 @@ public:
 
 	vector<Brick*> GetBricks() { return bricks; }
 
-	void Update();
 	void Render(HDC hdc);
+
 
 private:
 	vector<Brick*> bricks;

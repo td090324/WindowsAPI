@@ -11,11 +11,11 @@ Brick::~Brick()
 	delete rect;
 }
 
-void Brick::Update()
-{
-}
 
 void Brick::Render(HDC hdc)
 {
+	if (curHP <= 0)
+		return;
+
 	rect->Render(hdc);
 }
