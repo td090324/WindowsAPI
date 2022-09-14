@@ -16,7 +16,7 @@ public:
 	void CollisionPlayer();
 	void CollisionBricks();
 
-
+	bool& IsPlay() { return isPlay; }
 
 private:
 	Circle* circle;

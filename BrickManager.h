@@ -9,6 +9,12 @@ public:
 
 	void Render(HDC hdc);
 
+	void Stage1();
+	void Stage2();
+
+	void ClearStage();
+
+	bool IsClear();
 
 private:
 	vector<Brick*> bricks;

@@ -5,7 +5,7 @@
 class Brick
 {
 public:
-	Brick(Vector2 pos, Vector2 size);
+	Brick(Vector2 pos, Vector2 size, UINT hp = 1);
 	~Brick();
 
 	void Render(HDC hdc);
@@ -18,4 +18,6 @@ private:
 	Rect* rect;
 
 	UINT curHP = 1;
+
+	HBRUSH brushes[MAX_HP];
 };

@@ -30,6 +30,18 @@ void Ball::Update()
 		circle->Pos().x = player->GetRect()->Pos().x;
 		circle->Pos().y = player->GetRect()->Top() - circle->Radius();
 	}
+
+	if (bricks->IsClear())
+	{
+		isPlay = false;
+
+		dir = Vector2(+1, -1).Normal();
+
+		player->GetRect()->Pos().x = WIN_CENTER.x;
+
+		bricks->ClearStage();
+		bricks->Stage2();
+	}
 }
 
 void Ball::Render(HDC hdc)
@@ -70,6 +82,8 @@ void Ball::CollisionWall()
 		isPlay = false;
 
 		dir = Vector2(+1, -1).Normal();
+
+		player->GetRect()->Pos().x = WIN_CENTER.x;
 	}
 }
 
@@ -87,7 +101,7 @@ void Ball::CollisionBricks()
 	for (Brick* brick : bricks->GetBricks())
 	{
 		if (brick->GetHP() <= 0)
-			return;
+			continue;
 
 		//공에서 벽돌 중점을 향하는 벡터 구하기
 		Vector2 direction = this->circle->Pos() - brick->GetRect()->Pos();
