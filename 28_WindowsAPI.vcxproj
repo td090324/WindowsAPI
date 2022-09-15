@@ -154,6 +154,7 @@
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionScene.h" />
+    <ClInclude Include="ImageScene.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Framework.h" />
@@ -187,6 +188,7 @@
     <ClCompile Include="Framework.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="ImageScene.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainGame.cpp" />

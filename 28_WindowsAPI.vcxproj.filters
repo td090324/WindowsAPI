@@ -121,6 +121,9 @@
       <Filter>GameObject\Arkanoid</Filter>
     </ClInclude>
     <ClInclude Include="BrickManager.h">
+      <Filter>GameObject\Arkanoid</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -198,6 +201,9 @@
       <Filter>GameObject\Arkanoid</Filter>
     </ClCompile>
     <ClCompile Include="BrickManager.cpp">
+      <Filter>GameObject\Arkanoid</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

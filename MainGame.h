@@ -37,5 +37,6 @@ public:
 private:
 	Scene* scene;
 
+	HBITMAP hBitmap;
 };
 

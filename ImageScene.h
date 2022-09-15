@@ -1,0 +1,19 @@
+#pragma once
+class ImageScene : public Scene
+{
+public:
+	ImageScene();
+	~ImageScene();
+
+	virtual void Update() override;
+	virtual void Render(HDC hdc) override;
+
+private:
+
+	HDC		memDC;	//가상 공간
+	HBITMAP hBitmap;
+
+};
+
+
+

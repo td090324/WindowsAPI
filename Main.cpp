@@ -13,6 +13,7 @@ MainGame* mainGame = nullptr;
 
 Vector2 mousePos;
 HWND hWnd;
+HDC backDC;
 
 // 이 코드 모듈에 포함된 함수의 선언을 전달합니다:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -152,7 +153,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     case WM_TIMER:
     {
          mainGame->Update();
-         InvalidateRect(hWnd, nullptr, true); //사각형을 무효화 시키는 함수
+         InvalidateRect(hWnd, nullptr, false); //사각형을 무효화 시키는 함수
     }
         break;
     case WM_COMMAND:
@@ -198,6 +199,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     case WM_DESTROY:    //창이 종료(닫혔는지)했는지 유무를 담는 메시지
         {
             delete mainGame;
+            DeleteDC(backDC);
+            
             PostQuitMessage(0);
         }
         break;

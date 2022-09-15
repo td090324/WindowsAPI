@@ -38,8 +38,8 @@ using namespace std;
 #define COLOR_ORANGE  RGB(255,165,0)
 #define COLOR_PINK  RGB(255,192,203)
 
-#define WIN_WIDTH 600
-#define WIN_HEIGHT 800
+#define WIN_WIDTH 1280
+#define WIN_HEIGHT 720
 
 #define WIN_CENTER Vector2(WIN_WIDTH * 0.5, WIN_HEIGHT * 0.5) 
 
@@ -79,8 +79,11 @@ using namespace Math;
 #include "AvoidGameScene.h"
 #include "AngleScene.h"
 #include "ArkanoidScene.h"
+#include "ImageScene.h"
 
 #include "MainGame.h"
 
-extern Vector2 mousePos;	//다른 파일에서도 해당 전역 변수를 사용 가능하게끔.
-extern HWND hWnd;
+extern Vector2	 mousePos;	//다른 파일에서도 해당 전역 변수를 사용 가능하게끔.
+extern HWND		 hWnd;
+extern HDC		 backDC;
+extern HINSTANCE hInst;
