@@ -1,4 +1,11 @@
-﻿  ImageScene.cpp
-D:\k_study\WindowsAPI\ImageScene.cpp(42,35): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-D:\k_study\WindowsAPI\ImageScene.cpp(42,21): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  Texture.cpp
+D:\k_study\WindowsAPI\Texture.cpp(39,58): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\k_study\WindowsAPI\Texture.cpp(39,42): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\k_study\WindowsAPI\Texture.cpp(39,26): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\k_study\WindowsAPI\Texture.cpp(39,13): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TutorialScene.cpp
+D:\k_study\WindowsAPI\TutorialScene.cpp(47,43): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\k_study\WindowsAPI\TutorialScene.cpp(47,31): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Vector2.cpp
+  코드를 생성하고 있습니다...
   28_WindowsAPI.vcxproj -> D:\k_study\WindowsAPI\Debug\28_WindowsAPI.exe

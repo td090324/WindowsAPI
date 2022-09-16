@@ -37,6 +37,9 @@
     <Filter Include="GameObject\Arkanoid">
       <UniqueIdentifier>{45391798-b713-426c-95cd-d1d539d50cdd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{c51a7268-89e4-46e5-a8c9-62ba94817d05}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework.h">
@@ -126,6 +129,9 @@
     <ClInclude Include="ImageScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework.cpp">
@@ -205,6 +211,9 @@
     </ClCompile>
     <ClCompile Include="ImageScene.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Framework</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -57,6 +57,8 @@ using namespace Math;
 
 #include "Collision.h"
 
+#include "Texture.h"
+
 //Avoid
 #include "Poo.h"
 #include "AvoidPlayer.h"

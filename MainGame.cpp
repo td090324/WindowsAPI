@@ -42,6 +42,7 @@ void MainGame::Render(HDC hdc)
 	(
 		backDC, 0,0, WIN_WIDTH, WIN_HEIGHT, WHITENESS
 	);
+
 	scene->Render(backDC);
 
 	//MousePos
