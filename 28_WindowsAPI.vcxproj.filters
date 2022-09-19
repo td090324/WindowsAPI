@@ -126,11 +126,14 @@
     <ClInclude Include="BrickManager.h">
       <Filter>GameObject\Arkanoid</Filter>
     </ClInclude>
-    <ClInclude Include="ImageScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -209,11 +212,14 @@
     <ClCompile Include="BrickManager.cpp">
       <Filter>GameObject\Arkanoid</Filter>
     </ClCompile>
-    <ClCompile Include="ImageScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Texture.cpp">
       <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

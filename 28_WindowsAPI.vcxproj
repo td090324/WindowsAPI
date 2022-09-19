@@ -142,6 +142,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AngleScene.h" />
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="ArkanoidScene.h" />
     <ClInclude Include="ArkaPlayer.h" />
     <ClInclude Include="AvoidGameScene.h" />
@@ -174,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AngleScene.cpp" />
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="ArkanoidScene.cpp" />
     <ClCompile Include="ArkaPlayer.cpp" />
     <ClCompile Include="AvoidGameScene.cpp" />

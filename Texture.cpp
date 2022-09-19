@@ -2,8 +2,8 @@
 #include "Texture.h"
 
 
-Texture::Texture(wstring path, POINT imageSize, COLORREF transColor)
-	:transColor(transColor), imageSize(imageSize)
+Texture::Texture(wstring path, POINT imageSize, POINT frameSize, COLORREF transColor)
+	:transColor(transColor), imageSize(imageSize), frameSize(frameSize)
 {
 
 	bitmap = (HBITMAP)LoadImage
@@ -19,9 +19,11 @@ Texture::Texture(wstring path, POINT imageSize, COLORREF transColor)
 
 	memDC = CreateCompatibleDC(hdc);
 
-	ReleaseDC(hWnd, hdc);	
+	ReleaseDC(hWnd, hdc);
 
 	SelectObject(memDC, bitmap);
+
+	textureSize = {imageSize.x / frameSize.x, imageSize.y / frameSize.y};
 
 }
 
@@ -36,8 +38,11 @@ void Texture::Render(Rect* rect, POINT curFrame)
 	GdiTransparentBlt 
 	(
 		backDC, 
-		rect->Left(), rect->Top(), rect->Size().x, rect->Size().y,
-		memDC,     0,           0,    imageSize.x,    imageSize.y,
+		rect->Left(), rect->Top(), 
+		rect->Size().x, rect->Size().y,
+		memDC,
+		textureSize.x * curFrame.x, textureSize.y * curFrame.y, 
+		textureSize.x, textureSize.y,
 		COLOR_MAGENTA
 	);
 }

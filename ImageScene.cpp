@@ -6,7 +6,7 @@ ImageScene::ImageScene()
 	//이미지 정보를 비트맵에 저장.
 	hBitmap = (HBITMAP)LoadImage
 	(
-		hInst, 
+		hInst,
 		L"Texture/airplane.bmp", //경로는 보통 솔루션이다.
 		IMAGE_BITMAP,
 		281, 278,				 //이미지 사이즈
@@ -27,14 +27,18 @@ ImageScene::ImageScene()
 		hInst,
 		L"Texture/록맨.bmp",
 		IMAGE_BITMAP,
-		400, 100,
+		480, 100,
 		LR_LOADFROMFILE
 	);
 
 	airplaneTexture = new Texture(L"Texture/airplane.bmp", { 281, 278 });
 
 	//원본 상관없이 얼마만큼 사용할것인가.
-	airplaneRect = new Rect(WIN_CENTER, Vector2(300,300));
+	airplaneRect = new Rect(WIN_CENTER, Vector2(300, 300));
+
+
+	rockManTexture = new Texture(L"Texture/록맨.bmp", { 480, 100 }, {10,2});
+	rockManRect	   = new Rect({ 100,100 }, rockManTexture->GetTextureSize());
 }
 
 ImageScene::~ImageScene()
@@ -47,6 +51,9 @@ ImageScene::~ImageScene()
 
 	delete airplaneTexture;
 	delete airplaneRect;
+
+	delete rockManTexture;
+	delete rockManRect;
 }
 
 void ImageScene::Update()
@@ -84,24 +91,26 @@ void ImageScene::Render(HDC hdc)
 	//	memDC, 0, 0, 281, 278, SRCCOPY
 	//);
 
-	SelectObject(memDC, hBitmap);
+	//SelectObject(memDC, hBitmap);
 
-	GdiTransparentBlt    //마지막 인자는 투명처리할 색상 입력
-	(
-		backDC, 0, 0, 500, 500,
-		memDC, 0, 0, 281, 278, COLOR_MAGENTA
-	);
+	//GdiTransparentBlt    //마지막 인자는 투명처리할 색상 입력
+	//(
+	//	backDC, 0, 0, 500, 500,
+	//	memDC, 0, 0, 281, 278, COLOR_MAGENTA
+	//);
 
-	SelectObject(memDC, rockMan);
+	//SelectObject(memDC, rockMan);
 
 
-	GdiTransparentBlt    //마지막 인자는 투명처리할 색상 입력
-	(
-		backDC,          WIN_CENTER.x,         WIN_CENTER.y, 480/10, 100/2,
-		memDC,  (480/10) * curFrame.x, (100/2) * curFrame.y, 480/10, 100/2,
-		COLOR_MAGENTA
-	);
+	//GdiTransparentBlt    //마지막 인자는 투명처리할 색상 입력
+	//(
+	//	backDC,          WIN_CENTER.x,         WIN_CENTER.y, 480/10, 100/2,
+	//	memDC,  (480/10) * curFrame.x, (100/2) * curFrame.y, 480/10, 100/2,
+	//	COLOR_MAGENTA
+	//);
 
 	airplaneTexture->Render(airplaneRect);
+
+	rockManTexture->Render(rockManRect, curFrame);
 }
 

@@ -18,8 +18,11 @@ private:
 
 	int time = 0;
 
-	Texture* airplaneTexture;
+	Texture*	airplaneTexture;
 	Rect*       airplaneRect;
+
+	Texture*	rockManTexture;
+	Rect*		rockManRect;
 };
 
 
