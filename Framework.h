@@ -43,6 +43,8 @@ using namespace std;
 
 #define WIN_CENTER Vector2(WIN_WIDTH * 0.5, WIN_HEIGHT * 0.5) 
 
+#define PI 3.14159265
+
 
 
 #include "Point.h"
@@ -58,6 +60,7 @@ using namespace Math;
 #include "Collision.h"
 
 #include "Texture.h"
+#include "Animation.h"
 
 //Avoid
 #include "Poo.h"
@@ -82,6 +85,7 @@ using namespace Math;
 #include "AngleScene.h"
 #include "ArkanoidScene.h"
 #include "ImageScene.h"
+#include "AnimationScene.h"
 
 #include "MainGame.h"
 

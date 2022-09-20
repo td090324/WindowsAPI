@@ -16,7 +16,8 @@ MainGame::MainGame()
 	//scene = new AvoidGameScene();
 	//scene = new AngleScene();
 	//scene = new ArkanoidScene();
-	scene = new ImageScene();
+	//scene = new ImageScene();
+	scene = new AnimationScene();
 }
 
 MainGame::~MainGame()

@@ -2,7 +2,7 @@
 #include "Animation.h"
 
 Animation::Animation(Texture* texture, double updateTime)
-	:updateTime(updateTime)
+	:updateTime(updateTime), texture(texture)
 {
 	
 	UINT nX = texture->GetFrameSize().x;
@@ -25,6 +25,36 @@ Animation::~Animation()
 
 void Animation::Update()
 {
+	if (!isPlay)
+		return;
+
+	time += 0.01;	//TODO : Time 설정
+
+	if (time > updateTime)
+	{
+		time = 0;
+		curPlayIndex++;
+
+		//동작이 끝났으면
+		if (curPlayIndex >= indexes.size())
+		{
+			//반복 or 한번 동작인지 체크해서 초기화
+			if (isLoop)
+			{
+				curPlayIndex = 0;
+			}
+			else
+			{
+				curPlayIndex--;
+				isPlay = false;
+			}
+		}
+	}
+}
+
+void Animation::Render(Rect* rect)
+{
+	texture->Render(rect, GetCurFrame());
 }
 
 void Animation::SetDefault(bool isLoop)
@@ -59,4 +89,13 @@ void Animation::SetPart(int start, int end, bool isLoop)
 			indexes.push_back(i);
 		}
 	}
+}
+
+void Animation::SetVector(vector<UINT> vector, bool isLoop)
+{
+	this->isLoop = isLoop;
+
+	indexes.clear();
+
+	indexes = vector;
 }

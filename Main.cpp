@@ -52,14 +52,38 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     mainGame = new MainGame();
 
     // 기본 메시지 루프입니다:
-    while (GetMessage(&msg, nullptr, 0, 0))
+  /*  while (GetMessage(&msg, nullptr, 0, 0))
     {
         if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
         {
             TranslateMessage(&msg);
             DispatchMessage(&msg);
         }
+    }*/
+
+    while (true)
+    {
+        if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
+        {
+            if (msg.message == WM_QUIT)
+                break;
+
+            if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+            {
+                TranslateMessage(&msg);
+                DispatchMessage(&msg);
+            }
+        }
+        else //윈도우 메시지가 들어오지 않을 때
+        {
+            //원래 WM_TIMER에서 작동한 함수들을
+            //컴퓨터가 쉬고 있을때 갱신하도록.
+            mainGame->Update();
+            InvalidateRect(hWnd, nullptr, false); //사각형을 무효화 시키는 함수
+        }
     }
+
+    delete mainGame;
 
     return (int) msg.wParam;
 }
@@ -143,18 +167,17 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
     {
-    case WM_CREATE: //윈도우 창이 생성되고 가장 먼저 보내는 메시지. 생성자와 같은 느낌.
-    {
-        // 1/100초 마다 강제로 호출. ms 단위. WM_TIMER를 호출하는 함수.
-        // 즉 1초에 100번 호출
-        SetTimer(hWnd, 1, 10, nullptr);
-    }
-    break;
-    case WM_TIMER:
-    {
-         mainGame->Update();
-         InvalidateRect(hWnd, nullptr, false); //사각형을 무효화 시키는 함수
-    }
+    //case WM_CREATE: //윈도우 창이 생성되고 가장 먼저 보내는 메시지. 생성자와 같은 느낌.
+    //{
+    //    // 1/100초 마다 강제로 호출. ms 단위. WM_TIMER를 호출하는 함수.
+    //    // 즉 1초에 100번 호출
+    //    SetTimer(hWnd, 1, 10, nullptr);
+    //}
+    //break;
+    //case WM_TIMER:
+    //{
+
+    //}
         break;
     case WM_COMMAND:
         {
@@ -198,7 +221,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         break;
     case WM_DESTROY:    //창이 종료(닫혔는지)했는지 유무를 담는 메시지
         {
-            delete mainGame;
+            
             DeleteDC(backDC);
             
             PostQuitMessage(0);
