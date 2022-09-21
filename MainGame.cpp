@@ -26,10 +26,14 @@ MainGame::~MainGame()
 
 	//Check
 	DeleteObject(hBitmap);
+
+	Time::Delete();
 }
 
 void MainGame::Update()
 {
+	Time::Get()->Update();
+
 	scene->Update();
 }
 
@@ -45,6 +49,8 @@ void MainGame::Render(HDC hdc)
 	);
 
 	scene->Render(backDC);
+
+	Time::Get()->Render();
 
 	//MousePos
 	wstring str = L"MousePos : " + to_wstring((int)mousePos.x) + L", " + to_wstring((int)mousePos.y);

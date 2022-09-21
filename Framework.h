@@ -58,6 +58,7 @@ using namespace Math;
 #include "Line.h"
 
 #include "Collision.h"
+#include "Time.h"
 
 #include "Texture.h"
 #include "Animation.h"

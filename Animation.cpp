@@ -28,7 +28,7 @@ void Animation::Update()
 	if (!isPlay)
 		return;
 
-	time += 0.01;	//TODO : Time 설정
+	time += Time::Delta();	//TODO : Time 설정
 
 	if (time > updateTime)
 	{
