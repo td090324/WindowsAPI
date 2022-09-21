@@ -20,7 +20,7 @@ private:
 
 	static double timeElapsed;	//경과 시간
 
-	double timeScale = 0;		
+	double timeScale = 0;		//1Tick당 시간
 
 	INT64	    curTick = 0;
 	INT64	   lastTick = 0;

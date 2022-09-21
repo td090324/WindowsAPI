@@ -13,7 +13,7 @@ Time::Time()
 	//CPU 진동(tick) 누적 값
 	QueryPerformanceCounter((LARGE_INTEGER*)&lastTick);
 
-	//1tick에 걸리는 값
+	//1Tick동안 걸리는 시간
 	//double로 만들기 위해 1.0으로 사용
 	timeScale = 1.0 / ticksPerSecond;
 }
@@ -41,7 +41,8 @@ void Time::Update()
 	
 	QueryPerformanceCounter((LARGE_INTEGER*)&curTick);
 
-	//1프레임에 걸린 시간 (흐른 시간)
+	//1프레임당 걸린 시간 (흐른 시간)
+	//이 값이 누적돼서 1이 되면 실제 1초인것.
 	timeElapsed = (curTick - lastTick) * timeScale;
 
 	//수직 동기화
@@ -68,6 +69,7 @@ void Time::Update()
 	//프로그램 시작 후 경과 시간
 	runningTime += timeElapsed;
 
+	//FPS
 	//1초동안 몇프레임 흘렀는지 체크 가능
 	if (oneSecCount >= 1.0)
 	{
