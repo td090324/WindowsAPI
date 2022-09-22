@@ -22,6 +22,12 @@ AnimationScene::~AnimationScene()
 
 void AnimationScene::Update()
 {
+	if (Keyboard::Get()->Press(VK_LEFT))
+		marioRect->Pos() += Vector2(-1, 0) * 100 * Time::Delta();
+
+	if (Keyboard::Get()->Press(VK_RIGHT))
+		marioRect->Pos() += Vector2(+1, 0) * 100 * Time::Delta();
+
 	marioAnim->Update();
 }
 

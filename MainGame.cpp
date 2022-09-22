@@ -28,11 +28,13 @@ MainGame::~MainGame()
 	DeleteObject(hBitmap);
 
 	Time::Delete();
+	Keyboard::Delete();
 }
 
 void MainGame::Update()
 {
 	Time::Get()->Update();
+	Keyboard::Get()->Update();
 
 	scene->Update();
 }

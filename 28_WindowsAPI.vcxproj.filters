@@ -141,6 +141,9 @@
     <ClInclude Include="Time.h">
       <Filter>Utility</Filter>
     </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework.cpp">
@@ -231,6 +234,9 @@
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="Time.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
   </ItemGroup>

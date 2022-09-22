@@ -59,6 +59,7 @@ using namespace Math;
 
 #include "Collision.h"
 #include "Time.h"
+#include "Keyboard.h"
 
 #include "Texture.h"
 #include "Animation.h"
