@@ -151,6 +151,7 @@
     <ClInclude Include="Ball.h" />
     <ClInclude Include="Brick.h" />
     <ClInclude Include="BrickManager.h" />
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="CannonBall.h" />
     <ClInclude Include="CannonBallManager.h" />
     <ClInclude Include="Circle.h" />
@@ -164,16 +165,19 @@
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="PaintScene.h" />
+    <ClInclude Include="Plane.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Poo.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="ShootingScene.h" />
     <ClInclude Include="Tank.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="TutorialScene.h" />
+    <ClInclude Include="Ufo.h" />
     <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +191,7 @@
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Brick.cpp" />
     <ClCompile Include="BrickManager.cpp" />
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="CannonBall.cpp" />
     <ClCompile Include="CannonBallManager.cpp" />
     <ClCompile Include="Circle.cpp" />
@@ -202,13 +207,16 @@
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="PaintScene.cpp" />
+    <ClCompile Include="Plane.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Poo.cpp" />
     <ClCompile Include="Rect.cpp" />
+    <ClCompile Include="ShootingScene.cpp" />
     <ClCompile Include="Tank.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="TutorialScene.cpp" />
+    <ClCompile Include="Ufo.cpp" />
     <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>

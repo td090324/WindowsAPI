@@ -40,6 +40,9 @@
     <Filter Include="Framework">
       <UniqueIdentifier>{c51a7268-89e4-46e5-a8c9-62ba94817d05}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\ShootingGame">
+      <UniqueIdentifier>{87736b18-183e-451d-87e8-eb998507fe06}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework.h">
@@ -144,6 +147,18 @@
     <ClInclude Include="Keyboard.h">
       <Filter>Utility</Filter>
     </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>GameObject\ShootingGame</Filter>
+    </ClInclude>
+    <ClInclude Include="ShootingScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Ufo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Framework.cpp">
@@ -238,6 +253,18 @@
     </ClCompile>
     <ClCompile Include="Keyboard.cpp">
       <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>GameObject\ShootingGame</Filter>
+    </ClCompile>
+    <ClCompile Include="ShootingScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Ufo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

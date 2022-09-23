@@ -79,6 +79,11 @@ using namespace Math;
 #include "BrickManager.h"
 #include "Ball.h"
 
+//ShootingGame
+#include "Bullet.h"
+#include "Plane.h"
+#include "Ufo.h"
+
 #include "Scene.h"
 #include "TutorialScene.h"
 #include "PaintScene.h"
@@ -88,6 +93,7 @@ using namespace Math;
 #include "ArkanoidScene.h"
 #include "ImageScene.h"
 #include "AnimationScene.h"
+#include "ShootingScene.h"
 
 #include "MainGame.h"
 

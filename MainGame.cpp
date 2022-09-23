@@ -3,6 +3,8 @@
 
 MainGame::MainGame()
 {
+	srand(time(NULL));
+
 	HDC hdc = GetDC(hWnd);
 	hBitmap = CreateCompatibleBitmap(hdc, WIN_WIDTH, WIN_HEIGHT);
 	backDC = CreateCompatibleDC(hdc);
@@ -17,7 +19,8 @@ MainGame::MainGame()
 	//scene = new AngleScene();
 	//scene = new ArkanoidScene();
 	//scene = new ImageScene();
-	scene = new AnimationScene();
+	//scene = new AnimationScene();
+	scene = new ShootingScene();
 }
 
 MainGame::~MainGame()
